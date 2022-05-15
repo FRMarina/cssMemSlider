@@ -29,7 +29,7 @@ h1{
     display: flex;
     position: relative;
     width: 43.75em;
-    height: 21.875em;
+    height: 27.875em;
     margin: 0 auto;
     box-shadow: 0 0 0.5em 0.2em rgb(233, 218, 218);
     border-radius: 1em;
@@ -49,18 +49,22 @@ h1{
 
 .image1{
     background-image: url(https://klike.net/uploads/posts/2019-09/1568449955_25.jpeg);
+    background-size: 100% auto;
     z-index: 0;
 }
 .image2{
     background-image: url(https://klike.net/uploads/posts/2019-09/medium/1568449945_37.jpg);
+    background-size: 100% auto;
     z-index: 0;
 }
 .image3{
     background-image: url(https://klike.net/uploads/posts/2021-02/1614243107_1.jpeg);
+    background-size: 100% auto;
     z-index: 0;
 }
 .image4{
     background-image: url(https://klike.net/uploads/posts/2021-01/1612084655_1.jpeg);
+    background-size: 100% auto;
     z-index: 0;
 }
 
@@ -78,7 +82,7 @@ h1{
     justify-content: space-between;
     margin-top: 2em;
     width: 43.75em;
-    height: 11.875em;
+    height: 15.875em;
     overflow: hidden;
 }
 
@@ -134,4 +138,18 @@ label{
 
 input{
     display: none;
+}
+
+@media screen and (max-width: 839px) {
+    h1{
+        font-size: 4em;
+    }
+    .slider-wrap{
+        width: 33.75em;
+        height: 19.70em;
+    }
+
+    .action-panel{
+        width: 33.75em;
+    }
 }
