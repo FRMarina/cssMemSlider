@@ -1,0 +1,251 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+    background: radial-gradient(40% 50%, white, rgb(14, 179, 129));
+}
+
+h1{
+    font-size: 5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: azure;
+    margin-bottom: 0.5em;
+}
+
+.wrapper{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slider-wrap{
+    display: flex;
+    position: relative;
+    width: 43.75em;
+    height: 27.875em;
+    margin: 0 auto;
+    box-shadow: 0 0 0.5em 0.2em rgb(233, 218, 218);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.slider{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+.image1{
+    background-image: url(https://klike.net/uploads/posts/2019-09/1568449955_25.jpeg);
+    background-size: 100% auto;
+    z-index: 0;
+}
+.image2{
+    background-image: url(https://klike.net/uploads/posts/2019-09/medium/1568449945_37.jpg);
+    background-size: 100% auto;
+    z-index: 0;
+}
+.image3{
+    background-image: url(https://klike.net/uploads/posts/2021-02/1614243107_1.jpeg);
+    background-size: 100% auto;
+    z-index: 0;
+}
+.image4{
+    background-image: url(https://klike.net/uploads/posts/2021-01/1612084655_1.jpeg);
+    background-size: 100% auto;
+    z-index: 0;
+}
+
+#btn1:checked ~ .slider-wrap .image1,
+#btn2:checked ~ .slider-wrap .image2,
+#btn3:checked ~ .slider-wrap .image3,
+#btn4:checked ~ .slider-wrap .image4{
+    opacity: 1;
+    transform: scale(1);
+	z-index: 1;
+}
+
+.action-panel{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    width: 43.75em;
+    height: 15.875em;
+    overflow: hidden;
+}
+
+.action-labels{
+    display: flex;
+    column-gap: 1em;
+}
+
+label{
+	display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.control{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transition: background ease-in-out .5s;
+    background-color: rgb(5, 119, 85);
+}
+
+#btn1:checked ~ .action-panel .action-labels label:nth-of-type(1) .control,
+#btn2:checked ~ .action-panel .action-labels label:nth-of-type(2) .control,
+#btn3:checked ~ .action-panel .action-labels label:nth-of-type(3) .control,
+#btn4:checked ~ .action-panel .action-labels label:nth-of-type(4) .control{
+    border: 0.18em solid rgb(255, 255, 255);
+    background-color: rgb(25, 223, 163);
+}
+
+.wrapper label:hover .control{
+    background-color: rgb(255, 255, 255);
+}
+
+.wrapper label:active .control{
+   
+    width: 0.8em;
+    height: 0.8em;
+}
+
+.wrapper label .control:hover,
+#btn1:checked ~ label:nth-of-type(1) .control,
+#btn2:checked ~ label:nth-of-type(2) .control,
+#btn3:checked ~ label:nth-of-type(3) .control,
+#btn4:checked ~ label:nth-of-type(4) .control{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.wrapper label .control:active,
+#btn1:checked ~ label:nth-of-type(1) .control,
+#btn2:checked ~ label:nth-of-type(2) .control,
+#btn3:checked ~ label:nth-of-type(3) .control,
+#btn4:checked ~ label:nth-of-type(4) .control{
+    width: 0.8em;
+    height: 0.8em;
+}
+
+.action-subtitles > p{
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: -100%;
+}
+
+#btn1:checked ~ .action-panel .action-subtitles p:nth-of-type(1),
+#btn2:checked ~ .action-panel .action-subtitles p:nth-of-type(2),
+#btn3:checked ~ .action-panel .action-subtitles p:nth-of-type(3),
+#btn4:checked ~ .action-panel .action-subtitles p:nth-of-type(4){
+    display: block;
+    font-size: 1.5em;
+    color: azure;
+    margin-left: 0;
+    transition:  ease-in-out .5s;
+    
+}
+
+input{
+    display: none;
+}
+
+@media screen and (max-width: 839px) {
+    body{
+        background: radial-gradient(50% 30%, white, rgb(14, 179, 129));
+    }
+    h1{
+        font-size: 4em;
+    }
+    .slider-wrap{
+        width: 33.75em;
+        height: 19.70em;
+    }
+
+    .action-panel{
+        width: 33.75em;
+    }
+}
+
+@media screen and (max-width: 579px) {
+    h1{
+        font-size: 3em;
+    }
+
+    .wrapper{
+        overflow: hidden;
+    }
+    .slider-wrap{
+        width: 23.75em;
+        height: 13.70em;
+    }
+
+    .action-panel{
+        flex-direction: column;
+        width: 23.75em;
+        align-items: center;
+        margin-top: -12em;
+    }
+
+    .action-panel:nth-child(1){
+        order: -1;
+        }
+
+    .action-subtitles > p{
+        margin-left: -1000%;
+        margin-top: 18.7em;
+    }
+
+    #btn1:checked ~ .action-panel .action-subtitles p:nth-of-type(1),
+    #btn2:checked ~ .action-panel .action-subtitles p:nth-of-type(2),
+    #btn3:checked ~ .action-panel .action-subtitles p:nth-of-type(3),
+    #btn4:checked ~ .action-panel .action-subtitles p:nth-of-type(4){
+    margin-top: 12em;
+    margin-left: -7.5em;
+        }
+}
+
+@media screen and (max-width: 400px) {
+    h1{
+        font-size: 2em;
+    }
+
+    .slider-wrap{
+        width: 15.75em;
+        height: 8.70em;
+    }
+
+    .action-panel{
+        width: 15.75em;
+    }
+
+    .action-subtitles > p{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    #btn1:checked ~ .action-panel .action-subtitles p:nth-of-type(1),
+    #btn2:checked ~ .action-panel .action-subtitles p:nth-of-type(2),
+    #btn3:checked ~ .action-panel .action-subtitles p:nth-of-type(3),
+    #btn4:checked ~ .action-panel .action-subtitles p:nth-of-type(4){
+    font-size: 1em;
+    margin-top: 18em;
+    transform: scale(1);
+    opacity: 1;
+}
+}
